@@ -9,6 +9,7 @@ import Dashboard from "../Components/Page/Dashboard/Dashboard";
 import ContactUs from "../Components/Page/ContactUs";
 import Login from "../Components/Auth/Login";
 import Register from "../Components/Auth/Register";
+import Details from "../Components/Home/Details";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -37,6 +38,11 @@ import Register from "../Components/Auth/Register";
         {
             path:"/register",
             element:<Register></Register>,
+        },
+        {
+            path:"/details/:id",
+            element:<Details></Details>,
+            loader:()=>fetch('fakeData.json'),
         },
       ]
     },
