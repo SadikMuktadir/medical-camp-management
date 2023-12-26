@@ -11,7 +11,7 @@ const PopularCamps = () => {
   return (
     <div className="my-[100px]">
       <div className="text-center">
-        <p className="text-4 text-[#8D5CF6] mb-4">Get your best Camp now!</p>
+        <p className="text-4 text-[#8D5CF6]">Get your best Camp now!</p>
         <h1 className="text-[50px]">Popular Medical Camps Section</h1>
       </div>
       <div className="grid grid-cols-3 gap-5 mt-[50px]">
