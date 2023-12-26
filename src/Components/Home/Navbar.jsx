@@ -67,7 +67,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-300 my-[30px] rounded-[5px]">
+      <div className="navbar bg-base-100 my-[30px] rounded-[5px]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -93,18 +93,18 @@ const Navbar = () => {
               {navOption}
             </ul>
           </div>
-          <a className="text-2xl font-bold">Medical Verse</a>
+          <a className="text-[40px] font-bold">Medical Verse</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu mr-3 menu-horizontal px-1">{navOption}</ul>
         </div>
         <div className="navbar-end">
-          <div className="bg-[#E0F4FF] hover:bg-[#EA4C89] mr-3 rounded-[5px] text-black hover:text-white font-bold">
+          <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
             <Link to="/login">
               <button className="px-[30px] py-[15px]">Login</button>
             </Link>
           </div>
-          <div className="bg-[#E0F4FF] hover:bg-[#EA4C89] rounded-[5px] text-black hover:text-white font-bold">
+          <div className="bg-[#8D5CF6] rounded-[5px] text-white font-bold">
             <Link to="/register">
               <button className="px-[30px] py-[15px]">Register</button>
             </Link>
