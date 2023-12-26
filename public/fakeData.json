@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "campName": "Health and Wellness Expo",
+    "image": "https://i.ibb.co/nC4X28f/monika-grabkowska-q-Sk-Wl-OBHia0-unsplash.jpg",
+    "campFees": "$10",
+    "scheduleDateTime": "2023-03-15 09:00 AM - 4:00 PM",
+    "venueLocation": "City Community Center",
+    "targetAudience": "General Public",
+    "specialService": "Free Health Screenings",
+    "healthcareProfessional": "Dr. Smith, RN Johnson"
+  },
+  {
+    "id": 2,
+    "campName": "Pediatric Care Day",
+    "image": "https://i.ibb.co/LhR725Q/cdc-o-GJQt3-X-FY-unsplash.jpg",
+    "campFees": "$5",
+    "scheduleDateTime": "2023-04-10 10:00 AM - 2:00 PM",
+    "venueLocation": "Children's Hospital",
+    "targetAudience": "Children and Parents",
+    "specialService": "Pediatric Vaccinations",
+    "healthcareProfessional": "Dr. Anderson, Pediatric Nurses"
+  },
+  {
+    "id": 3,
+    "campName": "Heart Health Awareness",
+    "image": "https://i.ibb.co/chyMzp6/jesse-orrico-Us3-AQvy-OP-o-unsplash.jpg",
+    "campFees": "$15",
+    "scheduleDateTime": "2023-05-20 08:30 AM - 3:30 PM",
+    "venueLocation": "Cardio Wellness Center",
+    "targetAudience": "Adults 40 and above",
+    "specialService": "Cardiac Risk Assessments",
+    "healthcareProfessional": "Cardiologist Dr. Johnson, Cardiac Nurses"
+  },
+  {
+    "id": 4,
+    "campName": "Women's Health Checkup",
+    "image": "https://i.ibb.co/h91MykK/kike-vega-F2qh3yjz6-Jk-unsplash.jpg",
+    "campFees": "$10",
+    "scheduleDateTime": "2023-06-15 09:30 AM - 5:00 PM",
+    "venueLocation": "Women's Health Clinic",
+    "targetAudience": "Women of all ages",
+    "specialService": "Pap Smears and Mammograms",
+    "healthcareProfessional": "OB-GYN Dr. Williams, Women's Health Nurses"
+  },
+  {
+    "id": 5,
+    "campName": "Diabetes Awareness Camp",
+    "image": "https://i.ibb.co/Zx7tTZ0/towfiqu-barbhuiya-Yo-R3-Vluq4-KU-unsplash.jpg",
+    "campFees": "$5",
+    "scheduleDateTime": "2023-07-08 11:00 AM - 3:00 PM",
+    "venueLocation": "Community Hall",
+    "targetAudience": "Individuals with Diabetes",
+    "specialService": "Glucose Monitoring and Education",
+    "healthcareProfessional": "Endocrinologist Dr. Davis, Diabetes Educators"
+  },
+  {
+    "id": 6,
+    "campName": "Mental Health and Wellness",
+    "image": "https://i.ibb.co/x53kCXd/anthony-tran-v-Xymirxr5ac-unsplash.jpg",
+    "campFees": "Free",
+    "scheduleDateTime": "2023-08-25 12:00 PM - 6:00 PM",
+    "venueLocation": "Mental Health Center",
+    "targetAudience": "All Ages",
+    "specialService": "Counseling and Mental Health Assessments",
+    "healthcareProfessional": "Psychiatrist Dr. Robinson, Mental Health Counselors"
+  }
+]
