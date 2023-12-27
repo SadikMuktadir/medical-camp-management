@@ -1,7 +1,6 @@
 
-const Cart = ({ item }) => {
+const Card2 = ({ item }) => {
   const {
-    _id,
     campName,
     image,
     campFees,
@@ -34,4 +33,4 @@ const Cart = ({ item }) => {
   );
 };
 
-export default Cart;
+export default Card2;
