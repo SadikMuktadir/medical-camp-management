@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 
 const Details = () => {
   const loaderData = useLoaderData();
-  const [data, setData] = useState([]);
-  const { id } = useParams();
-  useEffect(() => {
-    const findData = loaderData?.find((data) => data.id === parseInt(id));
-    setData(findData);
-  }, [id, loaderData]);
-  console.log(data);
+  console.log(loaderData.length)
+  // const [cardData, setCardData] = useState([]);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/item")
+  //     .then((res) => res.json())
+  //     .then((data) => setCardData(data));
+  // }, []);
   return (
     <div>
       <DetailPage data={data}></DetailPage>

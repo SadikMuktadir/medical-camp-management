@@ -1,6 +1,6 @@
+
 [
   {
-    "id": 1,
     "campName": "Health and Wellness Expo",
     "image": "https://i.ibb.co/nC4X28f/monika-grabkowska-q-Sk-Wl-OBHia0-unsplash.jpg",
     "campFees": "$10",
@@ -8,10 +8,10 @@
     "venueLocation": "City Community Center",
     "targetAudience": "General Public",
     "specialService": "Free Health Screenings",
-    "healthcareProfessional": "Dr. Smith, RN Johnson"
+    "healthcareProfessional": "Dr. Smith, RN Johnson",
+    "category": "general"
   },
   {
-    "id": 2,
     "campName": "Pediatric Care Day",
     "image": "https://i.ibb.co/LhR725Q/cdc-o-GJQt3-X-FY-unsplash.jpg",
     "campFees": "$5",
@@ -19,10 +19,10 @@
     "venueLocation": "Children's Hospital",
     "targetAudience": "Children and Parents",
     "specialService": "Pediatric Vaccinations",
-    "healthcareProfessional": "Dr. Anderson, Pediatric Nurses"
+    "healthcareProfessional": "Dr. Anderson, Pediatric Nurses",
+    "category": "pediatric"
   },
   {
-    "id": 3,
     "campName": "Heart Health Awareness",
     "image": "https://i.ibb.co/chyMzp6/jesse-orrico-Us3-AQvy-OP-o-unsplash.jpg",
     "campFees": "$15",
@@ -30,10 +30,10 @@
     "venueLocation": "Cardio Wellness Center",
     "targetAudience": "Adults 40 and above",
     "specialService": "Cardiac Risk Assessments",
-    "healthcareProfessional": "Cardiologist Dr. Johnson, Cardiac Nurses"
+    "healthcareProfessional": "Cardiologist Dr. Johnson, Cardiac Nurses",
+    "category": "cardiovascular"
   },
   {
-    "id": 4,
     "campName": "Women's Health Checkup",
     "image": "https://i.ibb.co/h91MykK/kike-vega-F2qh3yjz6-Jk-unsplash.jpg",
     "campFees": "$10",
@@ -41,10 +41,10 @@
     "venueLocation": "Women's Health Clinic",
     "targetAudience": "Women of all ages",
     "specialService": "Pap Smears and Mammograms",
-    "healthcareProfessional": "OB-GYN Dr. Williams, Women's Health Nurses"
+    "healthcareProfessional": "OB-GYN Dr. Williams, Women's Health Nurses",
+    "category": "womenHealth"
   },
   {
-    "id": 5,
     "campName": "Diabetes Awareness Camp",
     "image": "https://i.ibb.co/Zx7tTZ0/towfiqu-barbhuiya-Yo-R3-Vluq4-KU-unsplash.jpg",
     "campFees": "$5",
@@ -52,10 +52,10 @@
     "venueLocation": "Community Hall",
     "targetAudience": "Individuals with Diabetes",
     "specialService": "Glucose Monitoring and Education",
-    "healthcareProfessional": "Endocrinologist Dr. Davis, Diabetes Educators"
+    "healthcareProfessional": "Endocrinologist Dr. Davis, Diabetes Educators",
+    "category": "diabetes"
   },
   {
-    "id": 6,
     "campName": "Mental Health and Wellness",
     "image": "https://i.ibb.co/x53kCXd/anthony-tran-v-Xymirxr5ac-unsplash.jpg",
     "campFees": "Free",
@@ -63,6 +63,8 @@
     "venueLocation": "Mental Health Center",
     "targetAudience": "All Ages",
     "specialService": "Counseling and Mental Health Assessments",
-    "healthcareProfessional": "Psychiatrist Dr. Robinson, Mental Health Counselors"
+    "healthcareProfessional": "Psychiatrist Dr. Robinson, Mental Health Counselors",
+    "category": "popular"
   }
 ]
+

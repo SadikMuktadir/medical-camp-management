@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const Cart = ({ item }) => {
   const {
@@ -26,11 +25,9 @@ const Cart = ({ item }) => {
             <div className="badge badge-outline">{targetAudience}</div>
             <div className="badge badge-outline">{scheduleDateTime}</div>
           </div>
-          {/* <div className="flex justify-center">
-            <Link to={`/details/${_id}`}>
-              <button className="btn btn-outline btn-primary">Details</button>
-            </Link>
-          </div> */}
+          <div className="flex justify-center">
+          <button className="btn btn-outline btn-primary">Add To Cart</button>
+          </div>
         </div>
       </div>
     </div>
