@@ -10,6 +10,7 @@ const Available = () => {
     const pediatric = data.filter((item) => item.category === "pediatric");
     const cardiovascular = data.filter((item) => item.category === "cardiovascular");
     const womenHealth = data.filter((item) => item.category === "womenHealth");
+    const popular = data.filter((item) => item.category === "popular");
     const diabetes = data.filter((item) => item.category === "diabetes");
   return (
     <div>
@@ -20,6 +21,7 @@ const Available = () => {
           <Tab>Cardiovascular</Tab>
           <Tab>Women Health</Tab>
           <Tab>Diabetes</Tab>
+          <Tab>Popular</Tab>
         </TabList>
 
         <TabPanel>
@@ -36,6 +38,9 @@ const Available = () => {
         </TabPanel>
         <TabPanel>
             <ItemsData items={diabetes}></ItemsData>
+        </TabPanel>
+        <TabPanel>
+            <ItemsData items={popular}></ItemsData>
         </TabPanel>
         
       </Tabs>

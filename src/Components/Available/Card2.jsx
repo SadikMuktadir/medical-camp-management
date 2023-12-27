@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 
 const Card2 = ({ item }) => {
   const {
+    _id,
     campName,
     image,
     campFees,
@@ -25,7 +27,9 @@ const Card2 = ({ item }) => {
             <div className="badge badge-outline">{scheduleDateTime}</div>
           </div>
           <div className="flex justify-center">
-          <button className="btn btn-outline btn-primary">Add To Cart</button>
+          <Link to={`/detail/${_id}`}>
+            <button className="btn btn-outline btn-primary">Details</button>
+          </Link>
           </div>
         </div>
       </div>

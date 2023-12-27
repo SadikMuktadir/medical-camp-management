@@ -3,14 +3,15 @@ import DetailPage from "./DetailPage";
 import { useEffect, useState } from "react";
 
 const Details = () => {
+  const [data, setData] = useState({});
+  const { id } = useParams();
   const loaderData = useLoaderData();
-  console.log(loaderData.length)
-  // const [cardData, setCardData] = useState([]);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/item")
-  //     .then((res) => res.json())
-  //     .then((data) => setCardData(data));
-  // }, []);
+
+  useEffect(() => {
+    const findData = loaderData?.find((item) => item._id === id);
+    setData(findData);
+  }, []);
+  
   return (
     <div>
       <DetailPage data={data}></DetailPage>
