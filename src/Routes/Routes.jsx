@@ -10,6 +10,7 @@ import ContactUs from "../Components/Page/ContactUs";
 import Login from "../Components/Auth/Login";
 import Register from "../Components/Auth/Register";
 import Details from "../Components/Home/Details";
+import AuthProvider from "../Components/Auth/AuthProvider";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -51,7 +52,9 @@ import Details from "../Components/Home/Details";
 const Routes = () => {
     return (
         <div className="max-w-screen-xl mx-auto">
+             <AuthProvider>
              <RouterProvider router={router} />
+             </AuthProvider>
         </div>
     );
 };
