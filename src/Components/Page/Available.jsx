@@ -3,6 +3,7 @@ import "react-tabs/style/react-tabs.css";
 import useItem from "../../Hooks/useItem";
 import ItemsData from "../Available/ItemsData";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Available = () => {
     const [data] = useItem();
@@ -44,6 +45,9 @@ const Available = () => {
         </TabPanel>
         
       </Tabs>
+      <div className="flex justify-center">
+        <Link to="/seeAll"><button className="bg-[#8D5CF6] px-5 py-3 rounded-[10px] text-white">See All</button></Link>
+      </div>
     </div>
   );
 };
