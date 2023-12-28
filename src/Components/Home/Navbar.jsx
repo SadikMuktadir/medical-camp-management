@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut();
+  };
   const navOption = (
     <>
       <li className="mr-3">
@@ -98,18 +104,26 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu mr-3 menu-horizontal px-1">{navOption}</ul>
         </div>
-        <div className="navbar-end">
-          <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
-            <Link to="/login">
-              <button className="px-[30px] py-[15px]">Login</button>
-            </Link>
+        {user ? (
+          <>
+            <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
+              <button onClick={handleLogOut} className="px-[30px] py-[15px]">LogOut</button>
+            </div>
+          </>
+        ) : (
+          <div className="navbar-end">
+            <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
+              <Link to="/login">
+                <button className="px-[30px] py-[15px]">Login</button>
+              </Link>
+            </div>
+            <div className="bg-[#8D5CF6] rounded-[5px] text-white font-bold">
+              <Link to="/register">
+                <button className="px-[30px] py-[15px]">Register</button>
+              </Link>
+            </div>
           </div>
-          <div className="bg-[#8D5CF6] rounded-[5px] text-white font-bold">
-            <Link to="/register">
-              <button className="px-[30px] py-[15px]">Register</button>
-            </Link>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
