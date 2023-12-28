@@ -106,8 +106,20 @@ const Navbar = () => {
         </div>
         {user ? (
           <>
-            <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
-              <button onClick={handleLogOut} className="px-[30px] py-[15px]">LogOut</button>
+            <div className="flex">
+              <div className="flex justify-center items-center mr-2">
+                <div className="h-[20px] w-[20px] mr-[10px]">
+                  <img src={user.photoURL} referrerPolicy="no-referrer" />
+                </div>
+                <div className="text-black">
+                {user.displayName}
+                </div>
+              </div>
+              <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
+                <button className="px-[30px] py-[15px]" onClick={handleLogOut}>
+                  LogOut
+                </button>
+              </div>
             </div>
           </>
         ) : (

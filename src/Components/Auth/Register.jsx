@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
-
+import { useNavigate } from "react-router-dom";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser,updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,7 +15,12 @@ const Register = () => {
     createUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        navigate("/");
         console.log(user);
+        updateUser(user,{
+            displayName:name,
+            photoURL:image
+          })
       })
       .catch((error) => {
         console.log(error);
