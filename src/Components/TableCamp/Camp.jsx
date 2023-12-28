@@ -9,20 +9,17 @@ const Camp = () => {
         <table className="table">
           <thead>
             <tr>
-              <th>
-              </th>
+              <th></th>
               <th>IMAGE</th>
               <th>CAMP NAME</th>
               <th>PRICE</th>
-              <th></th>
+              <th>TIME</th>
             </tr>
           </thead>
           <tbody>
             {data.map((item, index) => (
               <tr key={item._id}>
-                <th>
-                  {index+1}
-                </th>
+                <th>{index + 1}</th>
                 <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
@@ -35,14 +32,31 @@ const Camp = () => {
                     </div>
                   </div>
                 </td>
-                <td>
-                {item.campName}
-                </td>
+                <td>{item.campName}</td>
                 <td>{item.campFees}</td>
+                <td>{item.scheduleDateTime}</td>
                 <th>
-                 <div>
-                    <button className="btn btn-outline btn-secondary">Join Now</button>
-                 </div>
+                  <div>
+                    <button
+                      className="btn btn-outline btn-secondary"
+                      onClick={() =>
+                        document.getElementById("my_modal_2").showModal()
+                      }
+                    >
+                      Join Now
+                    </button>
+                    <dialog id="my_modal_2" className="modal">
+                      <div className="modal-box">
+                        <h3 className="font-bold text-lg">Hello!</h3>
+                        <p className="py-4">
+                          Press ESC key or click outside to close
+                        </p>
+                      </div>
+                      <form method="dialog" className="modal-backdrop">
+                        <button>close</button>
+                      </form>
+                    </dialog>
+                  </div>
                 </th>
               </tr>
             ))}

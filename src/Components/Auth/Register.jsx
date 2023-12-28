@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
 const Register = () => {
   const { createUser,updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Register = () => {
         const user = userCredential.user;
         navigate("/");
         console.log(user);
-        updateUser(user,{
+        updateProfile(user,{
             displayName:name,
             photoURL:image
           })

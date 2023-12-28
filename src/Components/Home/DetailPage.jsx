@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DetailPage = ({ data }) => {
   const {
     campName,
@@ -22,7 +24,7 @@ const DetailPage = ({ data }) => {
             <p className="">{healthcareProfessional}</p>
             <p className="">{targetAudience}</p>
             <p className="">{campFees}</p>
-            <button className="btn btn-primary">Get Started</button>
+           <Link to="/seeAll"><button className="btn btn-primary">See All</button></Link>
           </div>
         </div>
       </div>
