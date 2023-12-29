@@ -69,6 +69,21 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/myCamp"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#FFF" : "",
+              background: isActive ? "#8D5CF6" : "#FFF",
+              padding: isActive ? "15px 30px" : "15px 35px",
+            };
+          }}
+        >
+          My Joined Camp
+        </NavLink>
+      </li>
     </>
   );
   return (
