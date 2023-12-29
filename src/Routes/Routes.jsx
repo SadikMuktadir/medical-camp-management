@@ -29,10 +29,6 @@ const router = createBrowserRouter([
         element: <Available></Available>,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
-      },
-      {
         path: "/contact",
         element: <ContactUs></ContactUs>,
       },
@@ -58,6 +54,10 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/item"),
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
   },
 ]);
 
