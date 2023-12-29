@@ -1,6 +1,15 @@
-
-
-const JoinCamp = ({campFees}) => {
+const JoinCamp = ({ campFees }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const age = form.age.value;
+    const phone = form.phone.value;
+    const gender = form.gender.value;
+    const address = form.address.value;
+    const fees = form.fees.value;
+    console.log(name,age,phone,address,fees,gender)
+  };
 
   return (
     <div>
@@ -52,6 +61,7 @@ const JoinCamp = ({campFees}) => {
                   <option value="male">Male</option>
                   <option value="Female">Female</option>
                 </select>
+                </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Address</span>
@@ -63,14 +73,14 @@ const JoinCamp = ({campFees}) => {
                     className="input input-bordered"
                     required
                   />
-                </div>
+                
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Camp Fees $</span>
                 </label>
                 <input
-                defaultValue={campFees}
+                  defaultValue={campFees}
                   name="fees"
                   type="number"
                   placeholder="Camp Fees"
