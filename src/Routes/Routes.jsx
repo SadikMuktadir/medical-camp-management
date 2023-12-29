@@ -14,6 +14,10 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import OrganizerProfile from "../Components/Page/Dashboard/OrganizerProfile";
+import AddACamp from "../Components/Page/Dashboard/AddACamp";
+import ManageCamp from "../Components/Page/Dashboard/ManageCamp";
+import ManageCampRegister from "../Components/Page/Dashboard/ManageCampRegister";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -56,8 +60,26 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <Dashboard></Dashboard>,
+    children:[
+      {
+        path:"organizer",
+        element:<OrganizerProfile></OrganizerProfile>,
+      },
+      {
+        path:"addACamp",
+        element:<AddACamp></AddACamp>,
+      },
+      {
+        path:"manageCamp",
+        element:<ManageCamp></ManageCamp>,
+      },
+      {
+        path:"manageCampReg",
+        element:<ManageCampRegister></ManageCampRegister>,
+      },
+    ]
   },
 ]);
 

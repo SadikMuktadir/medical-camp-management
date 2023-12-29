@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaAddressCard, FaHome } from "react-icons/fa";
 import { AiFillEdit,AiFillDatabase } from "react-icons/ai";
 import { BiAlignLeft } from "react-icons/bi";
@@ -21,7 +21,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li className="px-4 py-2 flex justify-start">
-              <NavLink to="/">
+              <NavLink to="/dashboard/organizer">
                 <div className="flex justify-center items-center">
                 <div className="mr-2">
                   <FaAddressCard /> 
@@ -31,7 +31,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li className="px-4 py-2 flex justify-start">
-              <NavLink to="/">
+              <NavLink to="/dashboard/addACamp">
                 <div className="flex justify-center items-center">
                 <div className="mr-2">
                 <AiFillEdit />
@@ -41,7 +41,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li className="px-4 py-2 flex justify-start">
-              <NavLink to="/">
+              <NavLink to="/dashboard/manageCamp">
                 <div className="flex justify-center items-center">
                 <div className="mr-2">
                   <AiFillDatabase />
@@ -51,7 +51,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li className="px-4 py-2 flex justify-start">
-              <NavLink to="/">
+              <NavLink to="/dashboard/manageCampReg">
                 <div className="flex justify-center items-center">
                 <div className="mr-2">
                   <BiAlignLeft />
@@ -64,7 +64,9 @@ const Dashboard = () => {
           </ul>
         </div>
       </div>
-      <div className="w-3/4"></div>
+      <div className="w-3/4">
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
