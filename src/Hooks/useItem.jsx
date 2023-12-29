@@ -10,7 +10,6 @@ const useItem = () => {
       });
   }, []);
   return [data];
-
 };
 
 export default useItem;

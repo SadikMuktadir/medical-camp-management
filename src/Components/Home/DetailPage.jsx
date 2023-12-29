@@ -2,8 +2,10 @@ import { useContext } from "react";
 import JoinCamp from "../Available/JoinCamp";
 import { AuthContext } from "../Auth/AuthProvider";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useData from "../../Hooks/useData";
 
 const DetailPage = ({ data }) => {
+  const [,refetch] = useData();
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
   const {
@@ -21,6 +23,7 @@ const DetailPage = ({ data }) => {
     if (user && user.email) {
       const itemCollection = {
         newId: _id,
+        email:user.email,
         campName,
         image,
         specialService,
@@ -34,6 +37,7 @@ const DetailPage = ({ data }) => {
         .post("http://localhost:5000/camp", itemCollection)
         .then((res) => {
           console.log(res.data);
+          refetch();
         });
     }
   };

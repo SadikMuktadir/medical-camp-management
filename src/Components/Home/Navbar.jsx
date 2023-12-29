@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
+import useData from "../../Hooks/useData";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [item] = useData();
   const handleLogOut = () => {
     logOut();
   };
@@ -69,7 +71,7 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
-      <li>
+      <li className="">
         <NavLink
           to="/myCamp"
           style={({ isActive }) => {
@@ -81,7 +83,11 @@ const Navbar = () => {
             };
           }}
         >
-          My Joined Camp
+          <div>
+          <button className="flex">JoinCamp
+            <div>+ {item.length}</div>
+          </button>
+          </div>
         </NavLink>
       </li>
     </>
@@ -126,9 +132,7 @@ const Navbar = () => {
                 <div className="h-[20px] w-[20px] mr-[10px]">
                   <img src={user.photoURL} referrerPolicy="no-referrer" />
                 </div>
-                <div className="text-black">
-                {user.displayName}
-                </div>
+                <div className="text-black">{user.displayName}</div>
               </div>
               <div className="bg-[#8D5CF6]  mr-3 rounded-[5px] text-white font-bold">
                 <button className="px-[30px] py-[15px]" onClick={handleLogOut}>
