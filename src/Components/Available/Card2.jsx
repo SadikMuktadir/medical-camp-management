@@ -19,7 +19,7 @@ const Card2 = ({ item }) => {
         <div className="card-body">
           <h2 className="card-title">
             {campName}
-            <div className="badge badge-primary">{campFees}</div>
+            <div className="badge badge-primary">${campFees}</div>
           </h2>
           <p>{specialService}</p>
           <div className="card-actions justify-end">

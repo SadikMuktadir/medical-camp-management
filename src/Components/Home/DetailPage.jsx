@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+
+import JoinCamp from "../Available/JoinCamp";
 
 const DetailPage = ({ data }) => {
+
   const {
     campName,
     image,
@@ -23,8 +25,27 @@ const DetailPage = ({ data }) => {
             <p className="">{scheduleDateTime}</p>
             <p className="">{healthcareProfessional}</p>
             <p className="">{targetAudience}</p>
-            <p className="">{campFees}</p>
-           <Link to="/seeAll"><button className="btn btn-primary">See All</button></Link>
+            <p className="">${campFees}</p>
+            <div>
+                    <button
+                      className="btn btn-outline btn-primary"
+                      onClick={() =>
+                        document.getElementById("my_modal_2").showModal()
+                      }
+                    >
+                      Join Now
+                    </button>
+                    
+                    <dialog id="my_modal_2" className="modal">
+                      <div className="modal-box">
+                        <h3 className="font-bold text-[30px] text-center">Registration For Join!!!</h3>
+                        <JoinCamp campFees={campFees}></JoinCamp>
+                      </div>
+                      <form method="dialog" className="modal-backdrop">
+                        <button>close</button>
+                      </form>
+                    </dialog>
+                  </div>
           </div>
         </div>
       </div>

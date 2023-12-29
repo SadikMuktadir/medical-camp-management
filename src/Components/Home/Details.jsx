@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Details = () => {
   const [data, setData] = useState({});
-  const { id } = useParams();
+  const {id} = useParams()
   const loaderData = useLoaderData();
 
   useEffect(() => {

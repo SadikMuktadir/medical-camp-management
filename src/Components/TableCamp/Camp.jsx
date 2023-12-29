@@ -2,7 +2,6 @@ import useItem from "../../Hooks/useItem";
 
 const Camp = () => {
   const [data] = useItem();
-  console.log(data);
   return (
     <div>
       <div className="overflow-x-auto">
