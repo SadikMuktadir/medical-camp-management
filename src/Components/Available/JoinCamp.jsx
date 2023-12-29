@@ -1,4 +1,12 @@
+import { useContext } from "react";
+import { AuthContext } from "../Auth/AuthProvider";
+import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const JoinCamp = ({ campFees }) => {
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  const axiosSecure = useAxiosSecure();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -8,7 +16,25 @@ const JoinCamp = ({ campFees }) => {
     const gender = form.gender.value;
     const address = form.address.value;
     const fees = form.fees.value;
-    console.log(name,age,phone,address,fees,gender)
+    if (user && user.email) {
+      const collection = {
+        name:user.name,
+        age: parseInt(age),
+        phone: parseInt(phone),
+        gender,
+        address,
+        fees: parseInt(fees),
+        email: user.email,
+      };
+      axiosSecure.post("http://localhost:5000/info", collection).then((res) => {
+        if(res.data.insertedId){
+          swal("Good job!", "You are join the camp!", "success");
+          navigate("/myCamp");
+        }
+      });
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -17,18 +43,6 @@ const JoinCamp = ({ campFees }) => {
         <div className="hero-content flex-col lg:flex-row">
           <div className="card shrink-0 max-w-sm shadow-2xl w-[500px]">
             <form onSubmit={handleSubmit} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Age</span>
@@ -61,19 +75,18 @@ const JoinCamp = ({ campFees }) => {
                   <option value="male">Male</option>
                   <option value="Female">Female</option>
                 </select>
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Address</span>
-                  </label>
-                  <input
-                    name="address"
-                    type="text"
-                    placeholder="Address"
-                    className="input input-bordered"
-                    required
-                  />
-                
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Address</span>
+                </label>
+                <input
+                  name="address"
+                  type="text"
+                  placeholder="Address"
+                  className="input input-bordered"
+                  required
+                />
               </div>
               <div className="form-control">
                 <label className="label">

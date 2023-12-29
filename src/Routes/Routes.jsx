@@ -12,6 +12,7 @@ import Register from "../Components/Auth/Register";
 import Details from "../Components/Home/Details";
 import AuthProvider from "../Components/Auth/AuthProvider";
 import Camp from "../Components/TableCamp/Camp";
+import MyCamp from "../Components/Available/MyCamp";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -44,6 +45,10 @@ import Camp from "../Components/TableCamp/Camp";
         {
             path:"/seeAll",
             element:<Camp></Camp>,
+        },
+        {
+            path:"/myCamp",
+            element:<MyCamp></MyCamp>,
         },
         {
             path:"/detail/:id",
