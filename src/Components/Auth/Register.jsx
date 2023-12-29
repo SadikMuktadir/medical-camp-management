@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Register = () => {
-  const { createUser,updateUser } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+  const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -15,13 +17,20 @@ const Register = () => {
 
     createUser(email, password)
       .then((userCredential) => {
+        const userInfo = {
+          name: name,
+          email: email,
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+        });
         const user = userCredential.user;
         navigate("/");
         console.log(user);
-        updateProfile(user,{
-            displayName:name,
-            photoURL:image
-          })
+        updateProfile(user, {
+          displayName: name,
+          photoURL: image,
+        });
       })
       .catch((error) => {
         console.log(error);
