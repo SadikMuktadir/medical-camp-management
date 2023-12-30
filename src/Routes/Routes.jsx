@@ -18,6 +18,7 @@ import OrganizerProfile from "../Components/Page/Dashboard/OrganizerProfile";
 import AddACamp from "../Components/Page/Dashboard/AddACamp";
 import ManageCamp from "../Components/Page/Dashboard/ManageCamp";
 import ManageCampRegister from "../Components/Page/Dashboard/ManageCampRegister";
+import Update from "../Components/Page/Dashboard/Update";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -78,6 +79,11 @@ const router = createBrowserRouter([
       {
         path:"manageCampReg",
         element:<ManageCampRegister></ManageCampRegister>,
+      },
+      {
+        path:"update/:id",
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/item/${params.id}`)
       },
     ]
   },
