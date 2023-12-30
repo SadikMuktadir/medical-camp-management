@@ -8,7 +8,7 @@ const AddACamp = () => {
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
-  const { register, handleSubmit,reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -20,7 +20,9 @@ const AddACamp = () => {
       const campItem = {
         campName: data.campName,
         category: data.category,
-        campFees:data.campFees,
+        campFees: data.campFees,
+        venueLocation: data.venueLocation,
+        targetAudience: data.targetAudience,
         scheduleDateTime: data.scheduleDateTime,
         specialService: data.specialService,
         healthcareProfessional: data.healthcareProfessional,
@@ -32,7 +34,7 @@ const AddACamp = () => {
         swal("Good job!", "You clicked the button!", "success");
       }
     }
-  }
+  };
   return (
     <div>
       <div className="mt-[50px]">

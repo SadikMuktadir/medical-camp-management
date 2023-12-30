@@ -4,7 +4,7 @@ import { AiFillEdit,AiFillDatabase } from "react-icons/ai";
 import { BiAlignLeft } from "react-icons/bi";
 const Dashboard = () => {
   return (
-    <div className="h-screen flex">
+    <div className="min-h-screen flex">
       <div className="w-1/4 bg-blue-200">
         <div className="text-center pt-3"><a className="text-[25px] font-bold">Medical Verse</a></div>
         <div className="divider"></div>
