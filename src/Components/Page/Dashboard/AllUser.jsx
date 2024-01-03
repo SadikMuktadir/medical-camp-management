@@ -100,7 +100,7 @@ const AllUser = () => {
                         ) : (
                           <button
                             onClick={() => handleAdmin(user)}
-                            className="btn btn-outline btn-warning"
+                            className="btn btn-outline bg-[#8D5CF6]"
                           >
                             <FaUser className="text-[30px]" />
                           </button>
