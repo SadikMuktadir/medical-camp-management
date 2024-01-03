@@ -10,16 +10,14 @@ import Details from "../Components/Home/Details";
 import AuthProvider from "../Components/Auth/AuthProvider";
 import Camp from "../Components/TableCamp/Camp";
 import MyCamp from "../Components/Available/MyCamp";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import OrganizerProfile from "../Components/Page/Dashboard/OrganizerProfile";
 import AddACamp from "../Components/Page/Dashboard/AddACamp";
 import ManageCamp from "../Components/Page/Dashboard/ManageCamp";
 import ManageCampRegister from "../Components/Page/Dashboard/ManageCampRegister";
 import Update from "../Components/Page/Dashboard/Update";
 import AllUser from "../Components/Page/Dashboard/AllUser";
+import PrivetRoute from "./PrivetRoute";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -63,34 +61,39 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
-    children:[
+    element: (
+      <PrivetRoute>
+        <Dashboard></Dashboard>
+      </PrivetRoute>
+    ),
+    children: [
       {
-        path:"organizer",
-        element:<OrganizerProfile></OrganizerProfile>,
+        path: "organizer",
+        element: <OrganizerProfile></OrganizerProfile>,
       },
       {
-        path:"addACamp",
-        element:<AddACamp></AddACamp>,
+        path: "addACamp",
+        element: <AddACamp></AddACamp>,
       },
       {
-        path:"allUser",
-        element:<AllUser></AllUser>,
+        path: "allUser",
+        element: <AllUser></AllUser>,
       },
       {
-        path:"manageCamp",
-        element:<ManageCamp></ManageCamp>,
+        path: "manageCamp",
+        element: <ManageCamp></ManageCamp>,
       },
       {
-        path:"manageCampReg",
-        element:<ManageCampRegister></ManageCampRegister>,
+        path: "manageCampReg",
+        element: <ManageCampRegister></ManageCampRegister>,
       },
       {
-        path:"update/:id",
-        element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/item/${params.id}`)
+        path: "update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/item/${params.id}`),
       },
-    ]
+    ],
   },
 ]);
 

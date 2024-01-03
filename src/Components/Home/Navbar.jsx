@@ -71,7 +71,7 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
-      <li className="">
+      {/* <li className="">
         <NavLink
           to="/myCamp"
           style={({ isActive }) => {
@@ -89,7 +89,7 @@ const Navbar = () => {
           </button>
           </div>
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
   return (
