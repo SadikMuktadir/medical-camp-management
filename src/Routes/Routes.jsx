@@ -19,6 +19,7 @@ import AddACamp from "../Components/Page/Dashboard/AddACamp";
 import ManageCamp from "../Components/Page/Dashboard/ManageCamp";
 import ManageCampRegister from "../Components/Page/Dashboard/ManageCampRegister";
 import Update from "../Components/Page/Dashboard/Update";
+import AllUser from "../Components/Page/Dashboard/AllUser";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path:"addACamp",
         element:<AddACamp></AddACamp>,
+      },
+      {
+        path:"allUser",
+        element:<AllUser></AllUser>,
       },
       {
         path:"manageCamp",

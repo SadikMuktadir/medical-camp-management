@@ -35,6 +35,9 @@ const ManageCamp = () => {
 
   return (
     <div>
+      <div className="mt-[50px]">
+        <p className="text-center text-[40px]">Manage Camps</p>
+      </div>
       <div className="mb-[50px]">
         <div className="flex justify-between items-center px-[100px] py-[50px]">
           <h1 className="text-[20px] md:text-[32px]">
