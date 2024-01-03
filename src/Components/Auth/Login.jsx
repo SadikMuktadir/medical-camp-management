@@ -12,9 +12,9 @@ const Login = () => {
     const password = form.password.value;
     signIn(email, password)
       .then((userCredential) => {
-        navigate(location?.state ? location.state : "/");
         const user = userCredential.user;
         console.log(user);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);

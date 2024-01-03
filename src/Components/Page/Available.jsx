@@ -45,9 +45,9 @@ const Available = () => {
         </TabPanel>
         
       </Tabs>
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <Link to="/seeAll"><button className="bg-[#8D5CF6] px-5 py-3 rounded-[10px] text-white">See All</button></Link>
-      </div>
+      </div> */}
     </div>
   );
 };
