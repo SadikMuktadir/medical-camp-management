@@ -1,11 +1,28 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import useData from "../../../../Hooks/useData";
+import { AuthContext } from "../../../Auth/AuthProvider";
 
 const CheckOutFrom = () => {
+  const { user } = useContext(AuthContext);
+  const [tranId, setTranId] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
+  const axiosSecure = useAxiosSecure();
+  const [item] = useData();
+  const totalPrice = item.reduce((total, items) => total + items.campFees, 0);
+  useEffect(() => {
+    if (totalPrice > 0) {
+      axiosSecure.post("/create-payment-intent", { campFees:totalPrice })
+        .then((res) => {
+          setClientSecret(res.data.clientSecret);
+        });
+    }
+  }, [axiosSecure, totalPrice]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,9 +44,29 @@ const CheckOutFrom = () => {
     if (error) {
       setError(error.message);
     } else {
-    //   console.log("[PaymentMethod]", paymentMethod);
+      console.log("[PaymentMethod]", paymentMethod);
       setError("");
       setSuccess("Payment Successfully");
+    }
+
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            email: user?.email || "anonymous",
+            name: user?.displayName || "anonymous",
+          },
+        },
+      });
+    if (confirmError) {
+      console.log("confirm error");
+    } else {
+      console.log(paymentIntent);
+    }
+    if (paymentIntent.status === "succeeded") {
+      console.log(paymentIntent);
+      setTranId(paymentIntent.id);
     }
   };
 
@@ -64,6 +101,9 @@ const CheckOutFrom = () => {
         </div>
         <div>
           <p className="text-green-500 text-[20px] font-semibold">{success}</p>
+        </div>
+        <div>
+          <p className="text-black text-[20px] font-semibold">transaction: <span className="text">{tranId}</span></p>
         </div>
       </form>
     </div>

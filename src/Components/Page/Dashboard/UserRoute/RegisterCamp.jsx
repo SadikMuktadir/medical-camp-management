@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const RegisterCamp = () => {
   const [item, refetch] = useData();
   const axiosSecure = useAxiosSecure();
+  const totalPrice = item.reduce((total, items) => total + items.campFees, 0);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -39,10 +40,20 @@ const RegisterCamp = () => {
       </div>
       <div>
         <div className="mb-[50px]">
-          <div className="flex justify-between items-center px-[100px] py-[50px]">
-            <h1 className="text-[20px] md:text-[32px]">
-              Total Users: {item.length}
-            </h1>
+          <div className="flex justify-between my-[50px]">
+            <div className="">
+              <h1 className="text-[30px]">Total Users: {item.length}</h1>
+            </div>
+            <div className="flex">
+              <div className="text-[30px]">Total Price:{totalPrice} </div>
+              <div className="ml-5">
+                <Link to="/dashboard/payment">
+                  <button className="btn btn-outline text-[#8D5CF6]">
+                    Pay
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
           <div className="">
             <div className="overflow-x-auto">
@@ -56,7 +67,6 @@ const RegisterCamp = () => {
                     <th>DATE</th>
                     <th>VENUE</th>
                     <th>CONFIRMATION</th>
-                    <th>PAYMENT STATUS</th>
                     <th>ACTION</th>
                   </tr>
                 </thead>
@@ -81,7 +91,7 @@ const RegisterCamp = () => {
                       <td>{user.scheduleDateTime}</td>
                       <td>{user.venueLocation}</td>
                       <td>Not Payed</td>
-                      <td><Link to="/dashboard/payment"><button className="btn btn-outline text-[#8D5CF6]">Pay</button></Link></td>
+
                       <td>
                         <button
                           onClick={() => handleDelete(user._id)}
