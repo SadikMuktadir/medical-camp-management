@@ -2,6 +2,7 @@ import { MdDeleteForever } from "react-icons/md";
 import useData from "../../../../Hooks/useData";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const RegisterCamp = () => {
   const [item, refetch] = useData();
@@ -54,8 +55,8 @@ const RegisterCamp = () => {
                     <th>FEES</th>
                     <th>DATE</th>
                     <th>VENUE</th>
-                    <th>PAYMENT STATUS</th>
                     <th>CONFIRMATION</th>
+                    <th>PAYMENT STATUS</th>
                     <th>ACTION</th>
                   </tr>
                 </thead>
@@ -79,8 +80,8 @@ const RegisterCamp = () => {
                       <td>${user.campFees}</td>
                       <td>{user.scheduleDateTime}</td>
                       <td>{user.venueLocation}</td>
-                      <td>{user.venueLocation}</td>
-                      <td>{user.venueLocation}</td>
+                      <td>Not Payed</td>
+                      <td><Link to="/dashboard/payment"><button className="btn btn-outline text-[#8D5CF6]">Pay</button></Link></td>
                       <td>
                         <button
                           onClick={() => handleDelete(user._id)}

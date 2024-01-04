@@ -21,6 +21,7 @@ import Profile from "../Components/Page/Dashboard/UserRoute/Profile";
 import RegisterCamp from "../Components/Page/Dashboard/UserRoute/RegisterCamp";
 import PaymentHistory from "../Components/Page/Dashboard/UserRoute/PaymentHistory";
 import Feedback from "../Components/Page/Dashboard/UserRoute/Feedback";
+import Payment from "../Components/Page/Dashboard/Payment/Payment";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
       {
         path: "registerCamps",
         element: <RegisterCamp></RegisterCamp>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
       {
         path: "paymentHistory",
