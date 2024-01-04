@@ -69,11 +69,14 @@ const Dashboard = () => {
             </ul>
           </div>
         )}
+
+        {/* User Navbar */}
+
         {!isAdmin && (
           <div>
             <ul className="">
               <li className="px-4 py-2 flex justify-start">
-                <NavLink to="/dashboard/organizer">
+                <NavLink to="/dashboard/userProfile">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
                       <FaAddressCard />
@@ -83,7 +86,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li className="px-4 py-2 flex justify-start">
-                <NavLink to="/dashboard/addACamp">
+                <NavLink to="/dashboard/registerCamps">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
                       <AiFillEdit />
@@ -93,7 +96,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li className="px-4 py-2 flex justify-start">
-                <NavLink to="/dashboard/manageCamp">
+                <NavLink to="/dashboard/paymentHistory">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
                       <AiFillDatabase />
@@ -103,7 +106,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li className="px-4 py-2 flex justify-start">
-                <NavLink to="/dashboard/manageCampReg">
+                <NavLink to="/dashboard/feedback">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
                       <BiAlignLeft />
@@ -116,20 +119,20 @@ const Dashboard = () => {
             </ul>
           </div>
         )}
-          <div>
-            <ul>
+        <div>
+          <ul>
             <li className="px-4 py-2 flex justify-start">
-                <NavLink to="/">
-                  <div className="flex justify-center items-center">
-                    <div className="mr-2">
-                      <FaHome />
-                    </div>
-                    <div>Home</div>
+              <NavLink to="/">
+                <div className="flex justify-center items-center">
+                  <div className="mr-2">
+                    <FaHome />
                   </div>
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+                  <div>Home</div>
+                </div>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="w-3/4">
         <Outlet></Outlet>
