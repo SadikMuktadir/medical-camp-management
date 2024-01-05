@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaAddressCard, FaHome, FaUser } from "react-icons/fa";
+import { FaAddressCard, FaHome, FaUser,FaMousePointer  } from "react-icons/fa";
 import { AiFillEdit, AiFillDatabase } from "react-icons/ai";
 import { BiAlignLeft } from "react-icons/bi";
 import useAdmin from "../../../Hooks/useAdmin";
@@ -128,6 +128,16 @@ const Dashboard = () => {
                     <FaHome />
                   </div>
                   <div>Home</div>
+                </div>
+              </NavLink>
+            </li>
+            <li className="px-4 py-2 flex justify-start">
+              <NavLink to="/available">
+                <div className="flex justify-center items-center">
+                  <div className="mr-2">
+                    <FaMousePointer  />
+                  </div>
+                  <div>Available Camps</div>
                 </div>
               </NavLink>
             </li>
