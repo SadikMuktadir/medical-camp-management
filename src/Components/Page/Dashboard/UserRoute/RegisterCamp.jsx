@@ -42,10 +42,13 @@ const RegisterCamp = () => {
         <div className="mb-[50px]">
           <div className="flex justify-between my-[50px]">
             <div className="">
-              <h1 className="text-[30px]">Total Users: {item.length}</h1>
+              <h1 className="text-[30px]">
+                Total Registered Camps: {item.length}
+              </h1>
             </div>
-            <div className="flex">
-              <div className="text-[30px]">Total Price:{totalPrice} </div>
+            {item.length && <div className="flex">
+              <div className="text-[30px]">Total Price:${totalPrice >0 ?{totalPrice} : <span>ok</span>} </div>
+
               <div className="ml-5">
                 <Link to="/dashboard/payment">
                   <button className="btn btn-outline text-[#8D5CF6]">
@@ -53,7 +56,7 @@ const RegisterCamp = () => {
                   </button>
                 </Link>
               </div>
-            </div>
+            </div>}
           </div>
           <div className="">
             <div className="overflow-x-auto">

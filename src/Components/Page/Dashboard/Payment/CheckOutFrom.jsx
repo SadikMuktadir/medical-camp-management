@@ -67,6 +67,20 @@ const CheckOutFrom = () => {
     if (paymentIntent.status === "succeeded") {
       console.log(paymentIntent);
       setTranId(paymentIntent.id);
+
+
+      // Send data to server
+      const payments = {
+        email:user.email,
+        campFees:totalPrice,
+        transactionId:paymentIntent.id,
+        date:new Date(),
+        itemId:item.map(data=>data._id),
+        newItemId:item.map(data=>data.newId),
+        status:"pending"
+      }
+      const res = await axiosSecure.post("/payments",payments);
+    console.log(res.data);
     }
   };
 
@@ -103,7 +117,7 @@ const CheckOutFrom = () => {
           <p className="text-green-500 text-[20px] font-semibold">{success}</p>
         </div>
         <div>
-          <p className="text-black text-[20px] font-semibold">transaction: <span className="text">{tranId}</span></p>
+          <p className="text-black text-[20px] font-semibold">transaction Id: <span className="text-[#8D5CF6]">{tranId}</span></p>
         </div>
       </form>
     </div>
