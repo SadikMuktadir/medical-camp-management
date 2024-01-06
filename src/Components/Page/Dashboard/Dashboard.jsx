@@ -15,13 +15,23 @@ const Dashboard = () => {
         {isAdmin && (
           <div>
             <ul className="">
-              <li className="px-4 py-2 flex justify-start">
+              {/* <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/organizer">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
                       <FaAddressCard />
                     </div>
                     <div>Organizer Profile Management</div>
+                  </div>
+                </NavLink>
+              </li> */}
+              <li className="px-4 py-2 flex justify-start">
+                <NavLink to="/dashboard/registerCamps">
+                  <div className="flex justify-center items-center">
+                    <div className="mr-2">
+                      <AiFillEdit />
+                    </div>
+                    <div>Registered Camp</div>
                   </div>
                 </NavLink>
               </li>
@@ -45,7 +55,7 @@ const Dashboard = () => {
                   </div>
                 </NavLink>
               </li>
-              <li className="px-4 py-2 flex justify-start">
+              {/* <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/manageCampReg">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
@@ -54,7 +64,7 @@ const Dashboard = () => {
                     <div>Manage Registered Camps</div>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/allUser">
                   <div className="flex justify-center items-center">
@@ -75,7 +85,7 @@ const Dashboard = () => {
         {!isAdmin && (
           <div>
             <ul className="">
-              <li className="px-4 py-2 flex justify-start">
+              {/* <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/userProfile">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
@@ -84,7 +94,7 @@ const Dashboard = () => {
                     <div>My Profile</div>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/registerCamps">
                   <div className="flex justify-center items-center">

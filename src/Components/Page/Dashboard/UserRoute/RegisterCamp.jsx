@@ -36,7 +36,7 @@ const RegisterCamp = () => {
   return (
     <div>
       <div className="mt-[50px]">
-        <p className="text-center text-[40px]">Register Camps</p>
+        <p className="text-center text-[40px]">Register Camps:{item.length}</p>
       </div>
       <div>
         <div className="mb-[50px]">

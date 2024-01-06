@@ -43,7 +43,7 @@ const Navbar = () => {
       </li>
       <li className="mr-3">
         <NavLink
-          to="/dashboard"
+          to="/dashboard/registerCamps"
           style={({ isActive }) => {
             return {
               fontWeight: isActive ? "bold" : "",

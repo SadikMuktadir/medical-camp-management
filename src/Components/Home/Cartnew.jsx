@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 
-const Cart = ({ item }) => {
+
+const Cartnew = ({ item }) => {
   const {
-    _id,
     campName,
     image,
     campFees,
@@ -26,13 +25,10 @@ const Cart = ({ item }) => {
             <div className="badge badge-outline">{targetAudience}</div>
             <div className="badge badge-outline">{scheduleDateTime}</div>
           </div>
-          <Link to={`/detail/${_id}`}>
-            <button className="btn btn-outline btn-primary">Details</button>
-          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Cart;
+export default Cartnew;
