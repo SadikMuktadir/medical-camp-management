@@ -1,6 +1,8 @@
 import useItem from "../../Hooks/useItem";
 import Banner from "./Banner";
 import PopularCamps from "./PopularCamps";
+import Sponsor from "./Sponsor";
+import Stats from "./Stats";
 import Subscribe from "./Subscribe";
 import Testimonial from "./Testimonial";
 import Upcoming from "./Upcoming";
@@ -13,6 +15,8 @@ const Home = () => {
             <PopularCamps></PopularCamps>
             <Upcoming></Upcoming>
             <Testimonial></Testimonial>
+            <Stats></Stats>
+            <Sponsor></Sponsor>
             <Subscribe></Subscribe>
         </div>
     );
