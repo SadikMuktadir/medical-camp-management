@@ -22,6 +22,7 @@ import RegisterCamp from "../Components/Page/Dashboard/UserRoute/RegisterCamp";
 import PaymentHistory from "../Components/Page/Dashboard/UserRoute/PaymentHistory";
 import Feedback from "../Components/Page/Dashboard/UserRoute/Feedback";
 import Payment from "../Components/Page/Dashboard/Payment/Payment";
+import PrivetRoute from "./PrivetRoute";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
     children: [
       {
         path: "organizer",

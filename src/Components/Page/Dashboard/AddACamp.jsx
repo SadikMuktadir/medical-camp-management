@@ -31,7 +31,7 @@ const AddACamp = () => {
       const campRes = await axiosSecure.post("/item", campItem);
       if (campRes.data.insertedId) {
         reset();
-        swal("Good job!", "You clicked the button!", "success");
+        swal("Good job!", "Camp Added!", "success");
       }
     }
   };

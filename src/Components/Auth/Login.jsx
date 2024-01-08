@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 const Login = () => {
   const navigate = useNavigate();
   const { signIn } = useContext(AuthContext);
@@ -10,10 +11,21 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+
+    
+
+
     signIn(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Login Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -66,6 +78,14 @@ const Login = () => {
                   <input type="button" value="Login" />
                 </button>
               </div>
+              <div>
+              <p>
+                Already registered?{" "}
+                <Link to="/register" className="text-blue-700">
+                  Register
+                </Link>
+              </p>
+            </div>
             </form>
           </div>
         </div>

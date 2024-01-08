@@ -51,16 +51,16 @@ const Stats = () => {
 
           <div className="stat">
             <div className="stat-figure text-secondary">
-              <div className="avatar online">
+              {/* <div className="avatar online">
                 <div className="w-16 rounded-full">
                   <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                 </div>
-              </div>
+              </div> */}
             </div>
-            <div className="stat-value font-bold">86%</div>
-            <div className="stat-title">Tasks done</div>
+            <div className="stat-value font-bold">100%</div>
+            <div className="stat-title">Camp done</div>
             <div className="stat-desc text-secondary font-semibold">
-              31 tasks remaining
+              1 camp upcoming
             </div>
           </div>
         </div>

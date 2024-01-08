@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 const Register = () => {
+  const [registerError, setRegisterError] = useState("");
   const axiosPublic = useAxiosPublic();
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -15,17 +17,40 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    setRegisterError("");
+
+    if (password.length < 6) {
+      setRegisterError("Password can not be smaller than six characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError("Password must have a capital letter");
+      return;
+    } else if (!/[$&+,:;=?@#|'<>.^*()%!-]/.test(password)) {
+      setRegisterError("Password must have a special character");
+      return;
+    } else if (!/\d/.test(password)) {
+      setRegisterError("Password must have at least one numeric character");
+      return;
+    }
+
     createUser(email, password)
       .then((userCredential) => {
         const userInfo = {
           name: name,
           email: email,
-          image:image,
+          image: image,
         };
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log(res.data);
         });
         const user = userCredential.user;
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Register Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
         navigate("/");
         console.log(user);
         updateProfile(user, {
@@ -106,6 +131,19 @@ const Register = () => {
                 <button className="btn bg-[#8D5CF6] p-3 rounded-[10px]">
                   <input type="button" value="Register" />
                 </button>
+              </div>
+              {registerError && (
+                <p className="font-bold text-red-500 text-[20px]">
+                  {registerError}
+                </p>
+              )}
+              <div>
+                <p>
+                  Already register!!!
+                  <Link to="/login">
+                    <span className="text-blue-700">Login</span>
+                  </Link>
+                </p>
               </div>
             </form>
           </div>
