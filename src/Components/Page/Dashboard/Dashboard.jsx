@@ -76,7 +76,7 @@ const Dashboard = () => {
         {!isAdmin && (
           <div>
             <ul className="">
-              {/* <li className="px-4 py-2 flex justify-start">
+              <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/userProfile">
                   <div className="flex justify-center items-center">
                     <div className="mr-2">
@@ -85,7 +85,7 @@ const Dashboard = () => {
                     <div>My Profile</div>
                   </div>
                 </NavLink>
-              </li> */}
+              </li>
               <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/registerCamps">
                   <div className="flex justify-center items-center">

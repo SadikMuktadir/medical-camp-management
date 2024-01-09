@@ -23,6 +23,7 @@ import PaymentHistory from "../Components/Page/Dashboard/UserRoute/PaymentHistor
 import Feedback from "../Components/Page/Dashboard/UserRoute/Feedback";
 import Payment from "../Components/Page/Dashboard/Payment/Payment";
 import PrivetRoute from "./PrivetRoute";
+import UpdateUser from "../Components/Page/Dashboard/UserRoute/UpdateUser";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -94,6 +95,12 @@ const router = createBrowserRouter([
         element: <Update></Update>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/item/${params.id}`),
+      },
+      {
+        path: "users/:id",
+        element: <UpdateUser></UpdateUser>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/user/${params.id}`),
       },
       // User route
       {
