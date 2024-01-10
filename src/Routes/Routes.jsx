@@ -129,7 +129,7 @@ const router = createBrowserRouter([
 
 const Routes = () => {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="lg:max-w-screen-xl mx-auto">
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           <RouterProvider router={router} />
