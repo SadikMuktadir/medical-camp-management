@@ -15,12 +15,12 @@ const PopularCamps = () => {
       );
   }, []);
   return (
-    <div className="my-[100px]">
+    <div className="my-[100px] flex flex-col justify-center items-center">
       <div className="text-center">
         <p className="text-4 text-[#8D5CF6]">Get your best Camp now!</p>
-        <h1 className="text-[50px]">Popular Medical Camps Section</h1>
+        <h1 className="text-[25px] lg:text-[50px]">Popular Medical Camps Section</h1>
       </div>
-      <div className="grid grid-cols-3 gap-5 mt-[50px]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 lg:gap-5 mt-[50px]">
         {data.map((item) => (
           <Cart key={item._id} item={item}></Cart>
         ))}

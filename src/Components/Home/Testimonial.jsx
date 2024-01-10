@@ -35,7 +35,7 @@ const Testimonial = () => {
     <div className="mb-[80px]">
       <div className="text-center">
         <p className="text-4 text-[#8D5CF6]">What's our client say...</p>
-        <h1 className="text-[50px] mb-10">Testimonial</h1>
+        <h1 className="text-[25px] lg:text-[50px] mb-10">Testimonial</h1>
       </div>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <div>

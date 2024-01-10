@@ -5,7 +5,7 @@ const Sponsor = () => {
       <div className="">
         <div className="text-center">
           <p className="text-4 text-[#8D5CF6]">Here are the companies....</p>
-          <h1 className="text-[50px]">Our Sponsors</h1>
+          <h1 className="text-[25px] lg:text-[50px]">Our Sponsors</h1>
         </div>
       </div>
       <div>

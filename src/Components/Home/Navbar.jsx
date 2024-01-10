@@ -120,7 +120,7 @@ const Navbar = () => {
               {navOption}
             </ul>
           </div>
-          <a className="text-[40px] font-bold">Medical Verse</a>
+          <a className="text-[15px] lg:text-[40px] font-bold">Medical Verse</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu mr-3 menu-horizontal px-1">{navOption}</ul>

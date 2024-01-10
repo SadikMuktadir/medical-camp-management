@@ -3,7 +3,7 @@ const Stats = () => {
     <div className="my-[100px]">
       <div className="text-center">
         <p className="text-4 text-[#8D5CF6]">Camp Specialist.....</p>
-        <h1 className="text-[50px]">Our Specialist</h1>
+        <h1 className="text-[25px] lg:text-[50px]">Our Specialist</h1>
       </div>
       <div className="py-[50px] flex justify-center">
         <div className="stats shadow">

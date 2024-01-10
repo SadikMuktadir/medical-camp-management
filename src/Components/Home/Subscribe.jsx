@@ -16,9 +16,9 @@ const Subscribe = () => {
     }
   };
   return (
-    <div className="bg-[#E8F4FA] px-[200px] py-[100px]">
+    <div className="bg-[#E8F4FA] px-5 lg:px-[200px] py-5 lg:py-[100px]">
       <div className="mb-10 text-center">
-        <p className="text-[40px] font-semibold">Join with Us</p>
+        <p className="text-[25px] lg:text-[40px] font-semibold">Join with Us</p>
       </div>
       <form onSubmit={handleEmail}>
         <div className="flex justify-center">

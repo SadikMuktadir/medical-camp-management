@@ -11,7 +11,7 @@ const Cartnew = ({ item }) => {
   } = item;
   return (
     <div>
-      <div className="card h-96 w-96 bg-base-100 shadow-xl">
+      <div className="card h-96 w-[300px] lg:w-96 bg-base-100 shadow-xl">
         <figure>
           <img className="h-[250px]" src={image} alt="Shoes" />
         </figure>
