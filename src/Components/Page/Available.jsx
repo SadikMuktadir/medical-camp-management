@@ -16,7 +16,7 @@ const Available = () => {
   return (
     <div>
       <Tabs>
-        <TabList className="flex justify-center my-[80px]">
+        <TabList className="flex flex-col md:flex-row justify-center my-[80px]">
           <Tab>General</Tab>
           <Tab>Pediatric</Tab>
           <Tab>Cardiovascular</Tab>
