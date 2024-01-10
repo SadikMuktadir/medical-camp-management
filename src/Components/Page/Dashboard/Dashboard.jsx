@@ -6,8 +6,8 @@ import useAdmin from "../../../Hooks/useAdmin";
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
   return (
-    <div className="min-h-screen flex">
-      <div className="w-1/4 bg-blue-200">
+    <div className="min-h-screen flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start">
+      <div className="w-3/4 lg:w-1/4 bg-blue-200">
         <div className="text-center pt-3">
           <a className="text-[25px] font-bold">Medical Verse</a>
         </div>

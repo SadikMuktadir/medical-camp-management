@@ -41,7 +41,7 @@ const AddACamp = () => {
         <p className="text-center text-[40px]">Add A Camp</p>
       </div>
       <div className="flex justify-center ">
-        <div className="card shrink-0 max-w-sm shadow-2xl w-[500px]">
+        <div className="card shrink-0 max-w-sm shadow-2xl w-[300px] lg:w-[500px]">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">

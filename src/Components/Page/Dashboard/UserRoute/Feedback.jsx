@@ -45,9 +45,9 @@ const Feedback = () => {
   });
 
   return (
-    <div className="mx-[250px]">
+    <div className="mx-5 lg:mx-[250px]">
       <div className="mt-[50px]">
-        <p className="text-center text-[40px]">Submit Your Feedback</p>
+        <p className="text-center text-[20px] lg:text-[40px]">Submit Your Feedback</p>
       </div>
       <div>
         <form onSubmit={handleSubmit}>
@@ -59,7 +59,7 @@ const Feedback = () => {
               name="name"
               type="text"
               placeholder="Your Name"
-              className="input input-bordered input-info w-[500px]"
+              className="input input-bordered input-info w-[200px] lg:w-[500px]"
             />
           </div>
           <div className="flex flex-col">
@@ -70,7 +70,7 @@ const Feedback = () => {
               name="details"
               type="text"
               placeholder="Your Name"
-              className="input input-bordered input-info h-[200px] w-[500px]"
+              className="input input-bordered input-info h-[200px] w-[200px] lg:w-[500px]"
             />
           </div>
           {/* <div>

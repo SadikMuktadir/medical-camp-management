@@ -30,7 +30,7 @@ const OrganizerProfile = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col">
           <div className="stats shadow">
             <div className="stat">
               <div className="stat-figure text-secondary">
@@ -49,8 +49,8 @@ const OrganizerProfile = () => {
                 </svg> */}
               </div>
               <div className="stat-title">Total Camp Fees</div>
-              <div className="stat-value">${stats.revenue}</div>
-              {/* <div className="stat-desc"></div> */}
+              <div className="stat-value">${stats?.revenue}</div>
+              <div className="stat-desc"></div>
             </div>
 
             <div className="stat">
@@ -70,8 +70,8 @@ const OrganizerProfile = () => {
                 </svg> */}
               </div>
               <div className="stat-title">Users</div>
-              <div className="stat-value">{stats.users}</div>
-              {/* <div className="stat-desc">↗︎ 400 (22%)</div> */}
+              <div className="stat-value">{stats?.users}</div>
+              <div className="stat-desc">↗︎ 400 (22%)</div>
             </div>
 
             <div className="stat">
@@ -91,8 +91,8 @@ const OrganizerProfile = () => {
                 </svg> */}
               </div>
               <div className="stat-title">Total Camp</div>
-              <div className="stat-value">{stats.items}</div>
-              {/* <div className="stat-desc">↘︎ 90 (14%)</div> */}
+              <div className="stat-value">{stats?.items}</div>
+              <div className="stat-desc">↘︎ 90 (14%)</div>
             </div>
             <div className="stat">
               <div className="stat-figure text-secondary">
@@ -111,8 +111,8 @@ const OrganizerProfile = () => {
                 </svg> */}
               </div>
               <div className="stat-title">Total Register Camp</div>
-              <div className="stat-value">{stats.register}</div>
-              {/* <div className="stat-desc">↘︎ 90 (14%)</div> */}
+              <div className="stat-value">{stats?.register}</div>
+              <div className="stat-desc">↘︎ 90 (14%)</div>
             </div>
           </div>
         </div>
