@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const PopularCamps = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/item")
+    fetch("https://myapp-ten-hazel.vercel.app/item")
       .then((res) => res.json())
       .then((data) => 
       {

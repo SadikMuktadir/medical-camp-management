@@ -1,10 +1,20 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaAddressCard, FaHome, FaUser,FaMousePointer  } from "react-icons/fa";
+import { FaAddressCard, FaHome, FaUser, FaMousePointer } from "react-icons/fa";
 import { AiFillEdit, AiFillDatabase } from "react-icons/ai";
-import { BiAlignLeft } from "react-icons/bi";
+import { BiAlignLeft, BiSearch } from "react-icons/bi";
 import useAdmin from "../../../Hooks/useAdmin";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
+  const axiosSecure = useAxiosSecure();
+  const { data: users = [] } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/users");
+      return res.data;
+    },
+  });
   return (
     <div className="min-h-screen flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start">
       <div className="w-3/4 lg:w-1/4 bg-blue-200">
@@ -55,7 +65,7 @@ const Dashboard = () => {
                   </div>
                 </NavLink>
               </li>
-            
+
               <li className="px-4 py-2 flex justify-start">
                 <NavLink to="/dashboard/allUser">
                   <div className="flex justify-center items-center">
@@ -136,13 +146,44 @@ const Dashboard = () => {
               <NavLink to="/available">
                 <div className="flex justify-center items-center">
                   <div className="mr-2">
-                    <FaMousePointer  />
+                    <FaMousePointer />
                   </div>
                   <div>Available Camps</div>
                 </div>
               </NavLink>
             </li>
+            <li className="px-4 py-2 flex justify-start">
+              <NavLink to="/">
+                <div className="flex justify-center items-center">
+                  <div className="mr-2">
+                    <BiSearch />
+                  </div>
+                  <div>Search</div>
+                </div>
+              </NavLink>
+            </li>
           </ul>
+        </div>
+        <div>
+          {users.map((user) => {
+            const HealthCare = user.role === "doctor";
+            {
+              HealthCare && (
+                <ul>
+                  <li className="px-4 py-2 flex justify-start">
+                    <NavLink to="/">
+                      <div className="flex justify-center items-center">
+                        <div className="mr-2">
+                          <FaHome />
+                        </div>
+                        <div>Health Care</div>
+                      </div>
+                    </NavLink>
+                  </li>
+                </ul>
+              );
+            }
+          })}
         </div>
       </div>
       <div className="w-3/4">

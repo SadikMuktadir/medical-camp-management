@@ -71,6 +71,7 @@ const AllUser = () => {
                     <th>NAME</th>
                     <th>EMAIL</th>
                     <th className="flex justify-center">ROLE</th>
+                    <th>HEALTH</th>
                     <th>DELETE</th>
                   </tr>
                 </thead>
@@ -103,6 +104,13 @@ const AllUser = () => {
                             className="btn btn-outline bg-[#8D5CF6]"
                           >
                             <FaUser className="text-[30px]" />
+                          </button>
+                        )}
+                      </td>
+                      <td>
+                        {user.role === "doctor" && (
+                          <button className="btn btn-outline btn-warning">
+                            HealthCare
                           </button>
                         )}
                       </td>

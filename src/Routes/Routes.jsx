@@ -24,11 +24,13 @@ import Feedback from "../Components/Page/Dashboard/UserRoute/Feedback";
 import Payment from "../Components/Page/Dashboard/Payment/Payment";
 import PrivetRoute from "./PrivetRoute";
 import UpdateUser from "../Components/Page/Dashboard/UserRoute/UpdateUser";
+import Error from "../Components/Error";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",
@@ -61,13 +63,14 @@ const router = createBrowserRouter([
       {
         path: "/detail/:id",
         element: <Details></Details>,
-        loader: () => fetch("http://localhost:5000/item"),
+        loader: () => fetch("https://myapp-ten-hazel.vercel.app/item"),
       },
     ],
   },
   {
     path: "dashboard",
     element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "organizer",
@@ -94,13 +97,13 @@ const router = createBrowserRouter([
         path: "update/:id",
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/item/${params.id}`),
+          fetch(`https://myapp-ten-hazel.vercel.app/item/${params.id}`),
       },
       {
         path: "users/:id",
         element: <UpdateUser></UpdateUser>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/user/${params.id}`),
+          fetch(`https://myapp-ten-hazel.vercel.app/user/${params.id}`),
       },
       // User route
       {

@@ -34,7 +34,7 @@ const DetailPage = ({ data }) => {
         healthcareProfessional,
       };
       axiosSecure
-        .post("http://localhost:5000/camp", itemCollection)
+        .post("https://myapp-ten-hazel.vercel.app/camp", itemCollection)
         .then((res) => {
           console.log(res.data);
           refetch();

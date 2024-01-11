@@ -26,7 +26,7 @@ const JoinCamp = ({ campFees }) => {
         fees: parseInt(fees),
         email: user.email,
       };
-      axiosSecure.post("http://localhost:5000/info", collection).then((res) => {
+      axiosSecure.post("https://myapp-ten-hazel.vercel.app/info", collection).then((res) => {
         if(res.data.insertedId){
           swal("Good job!", "You are join the camp!", "success");
           navigate("/myCamp");

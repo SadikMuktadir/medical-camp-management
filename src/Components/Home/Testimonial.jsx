@@ -27,7 +27,7 @@ const Testimonial = () => {
   const [rating, setRating] = useState([]);
   const [dataRating, setDataRating] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://myapp-ten-hazel.vercel.app/review")
       .then((res) => res.json())
       .then((data) => setDataRating(data));
   }, []);
