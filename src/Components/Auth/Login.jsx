@@ -36,13 +36,13 @@ const Login = () => {
     <div>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="w-[500px] mr-[100px]">
+          <div className="w-[250px] lg:w-[500px] mr-0 lg:mr-[100px]">
             <img
               src="https://i.ibb.co/Jc36wVL/christiann-koepke-Wi-E01m-C9-At-Y-unsplash.jpg"
               alt=""
             />
           </div>
-          <div className="card shrink-0 max-w-sm shadow-2xl w-[500px]">
+          <div className="card shrink-0 max-w-sm shadow-2xl w-[250px] lg:w-[500px]">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
